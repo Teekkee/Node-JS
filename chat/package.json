@@ -1,15 +1,18 @@
 {
   "name": "chat",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "express & socket.io",
   "main": "index.js",
   "scripts": {
     "test": "nodejs index.js"
   },
-  "repository":{
-	"type": "git",
-	"url": "https://github.com/Teekkee/Node-JS.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Teekkee/Node-JS.git"
   },
   "author": "Teekkee",
-  "license": "BSD-2-Clause"
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "express": "~4.13.4"
+  }
 }
