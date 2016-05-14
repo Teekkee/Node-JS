@@ -1,0 +1,15 @@
+{
+  "name": "chat",
+  "version": "0.0.0",
+  "description": "express & socket.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodejs index.js"
+  },
+  "repository":{
+	"type": "git",
+	"url": "https://github.com/Teekkee/Node-JS.git"
+  },
+  "author": "Teekkee",
+  "license": "BSD-2-Clause"
+}
