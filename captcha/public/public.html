@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>Captcha Page</title>
+	<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("#back").submit(function(){
+			event.preventDefault();
+		})
+
+		$("#aa").click(function(){
+			var data = {
+				"src" : $("#gottem").val()
+			};
+			$.ajax({
+				method: "POST",
+				url: "/captcha",
+				data: data
+			})
+			.success(function(result){
+				$("h1").html(result.answ);
+			})
+			.fail(function(result){
+				$("h1").html(result.answ);
+			});
+		})
+	})		
+	</script>
+</head>
+<body>
+	<h1></h1>
+	<form id="back">
+		<input type="text" id="gottem"></input>
+		<img src="/captcha.png"><br>
+		<input type="submit" id="aa"></input>
+	</form>
+</body>
+</html>
