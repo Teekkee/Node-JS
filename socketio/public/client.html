@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Chat Form</title>
+   <meta charset="utf-8"><style>* {font-family:sans-serif} span {position:fixed; right:20px; top:10px;border:double; padding: 15px; border-radius:20px;}</style>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+$(function(){
+	var socket = io();
+	socket.on('chat message push', function(msg) {
+		$('div').append($('<p>').html(msg));
+	});
+	$('#b').on('click', function(){
+		socket.emit('chat message', $('#i').val());
+		$('#i').val('');
+		setTimeout(function(){});
+	});
+});
+  </script>
+ </head>
+ <body>
+    <h1>Chat:</h1>
+    <div></div>
+    <span><h2>Type your message:</h2>
+      <input id="i"><button id="b">Send!</button></span>
+ </body>
+</html>
