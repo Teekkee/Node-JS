@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> HTML5 JQuery Express Hash</title>
+		<meta charset='utf-8'>
+		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script>
+		$(function() {
+			$('input').on('keyup', function() {
+				var fVal = {
+						$(this).val()
+				};
+				$.ajax({
+					method : 'POST',
+					url : '/md5/md5',
+					data : fVal
+				})	
+				.done( function(result) {
+					$('h1').html('md5 :'+ result.md5);
+				})
+			})
+		})
+		</script>
+	</head>
+	<body>
+		<h1>Okay naggets.</h1>
+		<input placeholder="I want to see 6 hot loads" value=""></input>
+	</body>
+</html>
